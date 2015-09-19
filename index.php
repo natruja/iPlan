@@ -108,7 +108,7 @@
 			<div class="container-fluid">
 				<div class="page-header">
 					<div class="pull-left">
-						<h1>Blank page</h1>
+						<h1>Blank pages</h1>
 						 <div class="ui black horizontal label">Fruit</div>
 					</div>
 					<div class="pull-right">
