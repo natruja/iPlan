@@ -26,54 +26,63 @@
 			        autoOpen: false,
 			        height: 300,
 			        width: 400,
+					show: {
+					        effect: "blind",
+					        duration: 1000
+					      },
+					hide: {
+					        effect: "explode",
+					        duration: 1000
+				     	 },
 			        title: 'รายละเอียดการขอหนังสือนุมัติ',
 			        buttons: [{
-			        	text: 'Cancel',
+			        	text: 'ปิด',
 			        	iconCls: 'icon-cancel',
 			        	click: function() {
 			        		$(this).dialog("close");
 			        	}
 			        	 
 			        },{
-			        	text: 'Save',
+			        	text: 'บันทึกและส่งเมล์',
 			        	iconCls: 'icon-save',
 			        	click: function(){
 			        		save_detail();
 			        		$(this).dialog("close");
 			        	}
-			        }]
+			        }],
+			        open: function (e, ui) {
+				        $(this).parent().find(".ui-dialog-buttonset")
+				            .addClass("orange");
+					 }
 			        
 			    });
 
-				// $('#id').on('click', function() {
- 				// 		$('#myModal').show();
-				// }); 
-	 		 
-				
-	 			$('#test').change(function(event) {
+				$('#test').change(function(event) {
 		 			if($(this).val() == '2'){				 	 
 	 				 $('#dialog-modal').dialog('open');
 	 				}
 	 			});	
+	
+	 			
 	 			 
 	 			
 	 			//var test = $('#form_send').serialize();
-	 	 		$('#submit').click(function() {
-	 			 	var test = $('#form_send').serialize();
-	 			 	$.ajax({
-	 			 		type:'POST',
-	 			 		url: 'process.php',
-	 			 		data: 'test',
-	 			 		success: function(data){
-	 			 			 $("#modal-results").html(data);
-				        console.log(data);
-					         $('#myModal').modal('hide');  
-				 		},
-				 		error: function(error) {
-				 			  $("#modal-results").html(error);
-				 		 }
-	 			 	});
-	 			 }) ;
+	 	 		// $('#submit').click(function() {
+	 			 // 	var test = $('#form_send').serialize();
+	 			 // 	$.ajax({
+	 			 // 		type:'POST',
+	 			 // 		url: 'process.php',
+	 			 // 		data: 'test',
+	 			 // 		success: function(data){
+	 			 // 			 $("#modal-results").html(data);
+				  //       console.log(data);
+					 //         $('#myModal').modal('hide');  
+				 	// 	},
+				 	// 	error: function(error) {
+				 	// 		  $("#modal-results").html(error);
+				 	// 	 }
+	 			 // 	});
+	 			 // }) ;
 	 			 
 
 	 			 
@@ -87,6 +96,7 @@
 		#main{
 			margin-left: 5px;
 		}
+		 
 	</style>
 </head>
 <body>
@@ -99,6 +109,7 @@
 				<div class="page-header">
 					<div class="pull-left">
 						<h1>Blank page</h1>
+						 <div class="ui black horizontal label">Fruit</div>
 					</div>
 					<div class="pull-right">
 						<ul class="minitiles">
@@ -135,7 +146,7 @@
 							<div class="box-title">
 								<h3>
 									<i class="icon-reorder"></i>
-									Basic Widget
+									Basic Widgets
 								</h3>
 							</div>
 							<div class="box-content">
@@ -158,7 +169,7 @@
 					<p class="validateTips"></p>
 					<form id="form_send" method="POST">
 						<fieldset>
-							<label for="name">รายละเอียดหนังสือขออนุมัติ</label>
+							<label for="name">ระบุรายละเอียด</label>
 						 	<textarea name="detail" id="detail" style="margin: 0px 0px 10px; width: 345px; height: 138px;"></textarea>
 						</fieldset>
 					</form>
@@ -185,7 +196,7 @@
 				 		<button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
 				 		<button class="btn btn-primary" id="save">Save changes</button>
 				 	</div>
-				 </div>   -->
+				 </div>-->
 
 				 
 
