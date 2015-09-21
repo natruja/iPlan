@@ -95,7 +95,7 @@
 					</a>
 					<ul class="dropdown-menu">
 						<li>
-							<a href="plugins-charts.html">Charts</a>
+							<a href="more.php">Charts</a>
 						</li>
 						<li>
 							<a href="plugins-calendar.html">Calendar</a>

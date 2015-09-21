@@ -66,30 +66,11 @@
 	 			
 	 			 
 	 			
-	 			//var test = $('#form_send').serialize();
-	 	 		// $('#submit').click(function() {
-	 			 // 	var test = $('#form_send').serialize();
-	 			 // 	$.ajax({
-	 			 // 		type:'POST',
-	 			 // 		url: 'process.php',
-	 			 // 		data: 'test',
-	 			 // 		success: function(data){
-	 			 // 			 $("#modal-results").html(data);
-				  //       console.log(data);
-					 //         $('#myModal').modal('hide');  
-				 	// 	},
-				 	// 	error: function(error) {
-				 	// 		  $("#modal-results").html(error);
-				 	// 	 }
-	 			 // 	});
-	 			 // }) ;
-	 			 
-
-	 			 
- 				 
-
-	 			 
-	 			
+	 			var test = $('#form_send').serialize();
+	 	 		$('#submit').click(function(e) {
+	 			 	var button = $(e.target)
+	 			 }) ;
+	 			 	 
 	 		});
 	 </script>
 	 <style type="text/css" media="screen">
@@ -159,7 +140,32 @@
 								 		<option value="2">Name 2</option>
 								 	</select>
 								 	 <button class="btn btn-success" id="success">Success</button>
-								 	 <a href="#myModal" role="button" class="btn btn-primary" data-toggle="modal">Launch demo modal</a>
+								 	 <?php 
+								 	 	for($i=0; $i< 5; $i++){
+
+								 	 ?>
+								 	 <a href="#myModal" role="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal<?php echo $i ?> ">Launch demo modal <?php echo $i ?></a>
+								 	 <div id="myModal<?php echo $i ?>" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel<?php echo $i ?>" aria-hidden="true">
+								 	 	<div class="modal-header">
+								 	 		<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+								 	 		<h3 id="myModalLabel">Modal header</h3>
+								 	 	</div>
+								 	 	<div class="modal-body">
+								 	 		<div id="modal-results">
+												<?php echo $i; ?>
+
+								 	 		</div>
+
+
+								 	 	</div>
+								 	 	<div class="modal-footer">
+								 	 		<button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
+								 	 		<button class="btn btn-primary" id="save">Save changes</button>
+								 	 	</div>
+								 	 </div>
+								 		<?php 
+								 			}
+								 		 ?>
 								 </div>
 							</div>
 						</div>
@@ -176,27 +182,7 @@
 				</div>
 
 		
-				<!--<div id="myModal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-				 	<div class="modal-header">
-				 		<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-				 		<h3 id="myModalLabel">Modal header</h3>
-				 	</div>
-				 	<div class="modal-body">
-				 		<div id="modal-results"></div>
-				 		<form action="#" method="POST" id="form_send" > 
-				 			<div class="span6">
-				 				test <input type="text" name="test1"  >
-				 			</div>
-				 			<div class="span6">
-				 				test 2 <input type="text" name="test2"  >
-				 			</div>
-				 		</form>
-				 	</div>
-				 	<div class="modal-footer">
-				 		<button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
-				 		<button class="btn btn-primary" id="save">Save changes</button>
-				 	</div>
-				 </div>-->
+				
 
 				 
 
