@@ -67,8 +67,17 @@
 	 			 
 	 			
 	 			var test = $('#form_send').serialize();
-	 	 		$('#submit').click(function(e) {
-	 			 	var button = $(e.target)
+	 			var message = "Do you want to close?";
+	 	 		$('#success').click(function(e) {
+	 			 	 bootbox.confirm(message,function(result){
+	 			 	 	alert(result);
+	 			 	 	 // if(data === true){
+	 			 	 	 // 	window.location.href = 'http://www.google.com'; 
+	 			 	 	 // }
+	 			 	 });
+						 
+	 			 	 
+           			 
 	 			 }) ;
 	 			 	 
 	 		});
@@ -181,10 +190,7 @@
 					</form>
 				</div>
 
-		
-				
-
-				 
+		 
 
  
 			</div>
