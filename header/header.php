@@ -21,6 +21,8 @@
 	<link rel="stylesheet" href="css/plugins/multiselect/multi-select.css">
 	<!-- chosen -->
 	<link rel="stylesheet" href="css/plugins/chosen/chosen.css">
+	<!-- dataTables -->
+	<link rel="stylesheet" href="css/plugins/datatable/TableTools.css">
 
 
 	<!-- jQuery -->
@@ -51,6 +53,12 @@
 	<script src="js/plugins/multiselect/jquery.multi-select.js"></script>
 	<!-- Chosen -->
 	<script src="js/plugins/chosen/chosen.jquery.min.js"></script>
+	<!-- dataTables -->
+	<script src="js/plugins/datatable/jquery.dataTables.min.js"></script>
+	<script src="js/plugins/datatable/TableTools.min.js"></script>
+	<script src="js/plugins/datatable/ColReorder.min.js"></script>
+	<script src="js/plugins/datatable/ColVis.min.js"></script>
+	<script src="js/plugins/datatable/jquery.dataTables.columnFilter.js"></script>
 
 	<!-- Theme framework -->
 	<script src="js/eakroko.min.js"></script>

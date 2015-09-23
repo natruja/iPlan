@@ -8,6 +8,20 @@
 	 ?>
 	 <script type="text/javascript">
 	 		$(document).ready(function(){
+	 				 var table = $('#example').DataTable( {
+	 				 	"bPaginate": false,
+       					"bRetrieve": true,
+       					"dom": 'C<"clear">lfrtip'
+       					
+   					 });
+   					
+   					$('#test2').appendTo('div.dataTables_length');
+
+					/*var oTable = $('#example').dataTable();
+					$('#selector').change(function(){
+					      oTable.fnFilter($(this).val());
+					});*/
+					 
 	 			function save_detail(){
 	 				var detail = $('#detail').serialize();
 	 				$.ajax({
@@ -86,6 +100,23 @@
 		#main{
 			margin-left: 5px;
 		}
+		/*#refresh{
+			float: center;
+			margin-left: 50px;
+			border: 1px; 
+		}*/
+		div.dataTables_length {
+		    padding-left: 2em;
+		    width: 700px;
+		}
+	    div.dataTables_length,
+	    div.dataTables_filter {
+	        padding-top: 0.55em;
+	    }
+	    #test2{
+	    	float: right;
+	    }
+		 
 		 
 	</style>
 </head>
@@ -179,6 +210,8 @@
 							</div>
 						</div>
 					</div>
+
+
 				</div><!-- row-fluid -->
 				<div id="dialog-modal" title="รายละเอียดการขอหนังสือนุมัติ">
 					<p class="validateTips"></p>
@@ -188,6 +221,185 @@
 						 	<textarea name="detail" id="detail" style="margin: 0px 0px 10px; width: 345px; height: 138px;"></textarea>
 						</fieldset>
 					</form>
+				</div>
+
+			 	<div class="row-fluid">
+					<div class="span12">
+						<div class="box box-color box-bordered">
+							<div class="box-title">
+								<h3>
+									<i class="icon-table"></i>
+									Dynamic table
+								</h3>
+							</div>
+								 
+							<div id="test2">
+								เดือน <select name="sle" id="selector">
+									<option value="">option</option>
+									<option value="2">2</option>
+									<option value="3">3</option>
+									<option value="4">4</option>
+								</select> 
+							</div>
+							<div class="box-content nopadding">
+								<table class="table dataTable" id="example">
+									<thead>
+										<tr>
+											<th>Rendering engine</th>
+											<th>Browser</th>
+											<th class='hidden-350'>Platform(s)</th>
+											<th class='hidden-1024'>Engine version</th>
+											<th class='hidden-480'>CSS grade</th>
+										</tr>
+									</thead>
+									 <tfoot>
+							            <tr>
+							                <th>Name</th>
+							                <th>Position</th>
+							                <th>Office</th>
+							                <th>Age</th>
+							                <th>Start date</th>
+							                
+							            </tr>
+							        </tfoot>
+									<tbody>
+										<tr>
+											<td>Trident</td>
+											<td>
+												Internet
+													Explorer 4.0
+											</td>
+											<td class='hidden-350'>Win 95+</td>
+											<td class='hidden-1024'>4</td>
+											<td class='hidden-480'>X</td>
+										</tr>
+										<tr>
+											<td>Presto</td>
+											<td>Nokia N800</td>
+											<td class='hidden-350'>N800</td>
+											<td class='hidden-1024'>-</td>
+											<td class='hidden-480'>A</td>
+										</tr>
+										<tr>
+											<td>Misc</td>
+											<td>NetFront 3.4</td>
+											<td class='hidden-350'>Embedded devices</td>
+											<td class='hidden-1024'>-</td>
+											<td class='hidden-480'>A</td>
+										</tr>
+										<tr>
+											<td>Misc</td>
+											<td>Dillo 0.8</td>
+											<td class='hidden-350'>Embedded devices</td>
+											<td class='hidden-1024'>-</td>
+											<td class='hidden-480'>X</td>
+										</tr>
+										<tr>
+											<td>Misc</td>
+											<td>Links</td>
+											<td class='hidden-350'>Text only</td>
+											<td class='hidden-1024'>-</td>
+											<td class='hidden-480'>X</td>
+										</tr>
+										<tr>
+											<td>Misc</td>
+											<td>Lynx</td>
+											<td class='hidden-350'>Text only</td>
+											<td class='hidden-1024'>-</td>
+											<td class='hidden-480'>X</td>
+										</tr>
+										<tr>
+											<td>Misc</td>
+											<td>IE Mobile</td>
+											<td class='hidden-350'>Windows Mobile 6</td>
+											<td class='hidden-1024'>-</td>
+											<td class='hidden-480'>C</td>
+										</tr>
+										<tr>
+											<td>Misc</td>
+											<td>PSP browser</td>
+											<td class='hidden-350'>PSP</td>
+											<td class='hidden-1024'>-</td>
+											<td class='hidden-480'>C</td>
+										</tr>
+										<tr>
+											<td>Other browsers</td>
+											<td>All others</td>
+											<td class='hidden-350'>-</td>
+											<td class='hidden-1024'>-</td>
+											<td class='hidden-480'>U</td>
+										</tr>
+										<tr>
+											<td>Trident</td>
+											<td>
+												Internet
+													Explorer 4.0
+											</td>
+											<td class='hidden-350'>Win 95+</td>
+											<td class='hidden-1024'>4</td>
+											<td class='hidden-480'>X</td>
+										</tr>
+										<tr>
+											<td>Presto</td>
+											<td>Nokia N800</td>
+											<td class='hidden-350'>N800</td>
+											<td class='hidden-1024'>-</td>
+											<td class='hidden-480'>A</td>
+										</tr>
+										<tr>
+											<td>Misc</td>
+											<td>NetFront 3.4</td>
+											<td class='hidden-350'>Embedded devices</td>
+											<td class='hidden-1024'>-</td>
+											<td class='hidden-480'>A</td>
+										</tr>
+										<tr>
+											<td>Misc</td>
+											<td>Dillo 0.8</td>
+											<td class='hidden-350'>Embedded devices</td>
+											<td class='hidden-1024'>-</td>
+											<td class='hidden-480'>X</td>
+										</tr>
+										<tr>
+											<td>Misc</td>
+											<td>Links</td>
+											<td class='hidden-350'>Text only</td>
+											<td class='hidden-1024'>-</td>
+											<td class='hidden-480'>X</td>
+										</tr>
+										<tr>
+											<td>Misc</td>
+											<td>Lynx</td>
+											<td class='hidden-350'>Text only</td>
+											<td class='hidden-1024'>-</td>
+											<td class='hidden-480'>X</td>
+										</tr>
+										<tr>
+											<td>Misc</td>
+											<td>IE Mobile</td>
+											<td class='hidden-350'>Windows Mobile 6</td>
+											<td class='hidden-1024'>-</td>
+											<td class='hidden-480'>C</td>
+										</tr>
+										<tr>
+											<td>Misc</td>
+											<td>PSP browser</td>
+											<td class='hidden-350'>PSP</td>
+											<td class='hidden-1024'>-</td>
+											<td class='hidden-480'>C</td>
+										</tr>
+										<tr>
+											<td>Other browsers</td>
+											<td>All others</td>
+											<td class='hidden-350'>-</td>
+											<td class='hidden-1024'>-</td>
+											<td class='hidden-480'>U</td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
+						</div>
+					</div>
 				</div>
 
 		 
