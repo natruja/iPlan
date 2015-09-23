@@ -10,17 +10,16 @@
 	 		$(document).ready(function(){
 	 				 var table = $('#example').DataTable( {
 	 				 	"bPaginate": false,
-       					"bRetrieve": true,
-       					"dom": 'C<"clear">lfrtip'
+       					"bRetrieve": true
+       					 
        					
    					 });
    					
    					$('#test2').appendTo('div.dataTables_length');
-
-					/*var oTable = $('#example').dataTable();
+					var oTable = $('#example').dataTable();
 					$('#selector').change(function(){
 					      oTable.fnFilter($(this).val());
-					});*/
+					});
 					 
 	 			function save_detail(){
 	 				var detail = $('#detail').serialize();
@@ -107,15 +106,19 @@
 		}*/
 		div.dataTables_length {
 		    padding-left: 2em;
-		    width: 700px;
+		    border-style: solid;
+    		border-width: medium;
+    		width: 45%;
 		}
-	    div.dataTables_length,
 	    div.dataTables_filter {
 	        padding-top: 0.55em;
-	    }
+	        border-style: solid;
+    		border-width: medium;
+	    } 
 	    #test2{
 	    	float: right;
-	    }
+	    } 
+
 		 
 		 
 	</style>
@@ -234,15 +237,15 @@
 							</div>
 								 
 							<div id="test2">
-								เดือน <select name="sle" id="selector">
-									<option value="">option</option>
+								เดือน &nbsp; &nbsp;<select name="sle" id="selector" style="width: 100px;">
+									<option>เลือก</option>
 									<option value="2">2</option>
 									<option value="3">3</option>
 									<option value="4">4</option>
 								</select> 
 							</div>
 							<div class="box-content nopadding">
-								<table class="table dataTable" id="example">
+								<table class="table dataTable" id="example" width="100%">
 									<thead>
 										<tr>
 											<th>Rendering engine</th>
