@@ -10,15 +10,16 @@
 	 		$(document).ready(function(){
 	 				 var table = $('#example').DataTable( {
 	 				 	"bPaginate": false,
-       					"bRetrieve": true
-       					 
-       					
+       					"bRetrieve": true,
+       					 "sdom": '<"top"i>rt<"bottom"fl><"clear">',
+       					 "select": true
    					 });
-   					
-   					$('#test2').appendTo('div.dataTables_length');
+   					$("#id-seletor").appendTo(".dataTables_length");
+     					 
+   					// 		$('#test2').appendTo('div.dataTables_length');
 					var oTable = $('#example').dataTable();
 					$('#selector').change(function(){
-					      oTable.fnFilter($(this).val());
+					     oTable.fnFilter($(this).val());
 					});
 					 
 	 			function save_detail(){
@@ -105,17 +106,17 @@
 			border: 1px; 
 		}*/
 		div.dataTables_length {
-		    padding-left: 2em;
+		   /* padding-left: 2em;
 		    border-style: solid;
-    		border-width: medium;
-    		width: 45%;
+    		border-width: medium;*/
+    		width: 50%;
 		}
-	    div.dataTables_filter {
+	   /* div.dataTables_filter {
 	        padding-top: 0.55em;
 	        border-style: solid;
     		border-width: medium;
-	    } 
-	    #test2{
+	    } */
+	    #id-seletor{
 	    	float: right;
 	    } 
 
@@ -178,7 +179,8 @@
 									<div id="modal-results">
 										
 									</div>
-								 	<select name="name" id="test" class='chosen-select'>
+
+								 	<select name="name" id="test2" class='chosen-select'>
 								 		<option value="1">Name 1</option>
 								 		<option value="2">Name 2</option>
 								 	</select>
@@ -236,16 +238,18 @@
 								</h3>
 							</div>
 								 
-							<div id="test2">
-								เดือน &nbsp; &nbsp;<select name="sle" id="selector" style="width: 100px;">
+							<div id="id-seletor">
+								เดือน &nbsp; &nbsp;
+								<select name="sle" id="selector" class='chosen-select' style="width: 100px;">
 									<option>เลือก</option>
-									<option value="2">2</option>
-									<option value="3">3</option>
-									<option value="4">4</option>
+									<option value="Misc">Misc</option>
+									<option value="Other browsers">Other browsers</option>
+									<option value="Presto">Presto</option>
+									<option value="Trident">Trident</option>
 								</select> 
 							</div>
 							<div class="box-content nopadding">
-								<table class="table dataTable" id="example" width="100%">
+								<table class="table dataTable dataTable-colvis" id="example" width="100%">
 									<thead>
 										<tr>
 											<th>Rendering engine</th>
