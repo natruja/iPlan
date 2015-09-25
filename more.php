@@ -226,11 +226,11 @@
 									print_r(str_word_count("Hello world & good morning!",1,"&"));
 									echo '<br>';
 								 
-									//  $data = "Two Ts and one F.";
+									 $data = "Two Ts and one F.";
 
-									// foreach (count_chars($data, 1) as $i => $val) {
-									//    echo "There were $val instance(s) of \"" , chr($i) , "\" in the string.\n <br >";
-									// }
+									foreach (count_chars($data, 1) as $i => $val) {
+									   echo "There were $val instance(s) of \"" , chr($i) , "\" in the string.\n <br >";
+									}
 										 
 								?>
 							</div>
