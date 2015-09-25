@@ -4,7 +4,7 @@
 			<a href="#" class="toggle-nav" rel="tooltip" data-placement="bottom" title="Toggle navigation"><i class="icon-reorder"></i></a>
 			<ul class='main-nav'>
 				<li>
-					<a href="index.html">
+					<a href="index.php">
 						<i class="icon-home"></i>
 						<span>Dashboard</span>
 					</a>
@@ -17,10 +17,10 @@
 					</a>
 					<ul class="dropdown-menu">
 						<li>
-							<a href="forms-basic.html">Basic forms</a>
+							<a href="more.php">More</a>
 						</li>
 						<li>
-							<a href="forms-extended.html">Extended forms</a>
+							<a href="home.php">Home</a>
 						</li>
 						<li>
 							<a href="forms-validation.html">Validation</a>
