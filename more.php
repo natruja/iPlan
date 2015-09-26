@@ -7,7 +7,7 @@
 	<meta name="apple-mobile-web-app-capable" content="yes" />
 	<!-- Apple devices fullscreen -->
 	<meta names="apple-mobile-web-app-status-bar-style" content="black-translucent" />
-	
+
 
 	<!-- Bootstrap -->
 	<link rel="stylesheet" href="css/bootstrap.min.css">
@@ -22,7 +22,7 @@
 	<link rel="stylesheet" href="css/style.css">
 	<!-- Color CSS -->
 	<link rel="stylesheet" href="css/themes.css">
-	
+
 
 	<!-- jQuery -->
 	<script src="js/jquery.min.js"></script>
@@ -69,16 +69,16 @@
 	        			 autoclose: true,
    						 todayHighlight: true
 	   				 });
-				 		 
+
 						 	$('#text1').keyup(function() {
 						 		$('#test2').show();
 						 	});
-						 	
+
 
 						 	$('#text2').keyup(function() {
 						 		$('#test3').show();
 						 	});
-				  
+
 
 
 
@@ -87,29 +87,28 @@
 				 		var date =  $('#date').val();
 
 				 		var text1 = $('#text1').val();
-				 		 
-				 		 
+
+
 				 		 var isValid = true;
 				 		 $('input[type="text"]').each(function() {
-				 		 	if($.trim($(this).val()) == ""){
-
+				 		 	if($.trim($(this).val()) === ""){
 				 		 		isValid = false;
 				 		 		$(this).css({
 				 		 			"border": "1px solid red"
-				 		 		});	
+				 		 		});
 				 		 	}else{
 				 		 		$(this).css({
 									"border": ""
 				 		 		});
 				 		 	}
-				 		 	            
+
 				 		 });
 
 
 
-				 		  
+
 				 	});
-					 
+
 			 });
 	</script>
 	<style type="text/css" media="screen">
@@ -123,9 +122,9 @@
 </head>
 
 <body>
-	<?php 
-		include('navication/navebar.php');
-	?>
+	<?php
+include 'navication/navebar.php';
+?>
 	<div class="container-fluid" id="content">
 		<div id="main">
 			<div class="container-fluid">
@@ -188,11 +187,11 @@
 								</h3>
 							</div>
 							<div class="box-content">
-								<form action="#" method="get"> 
-								<div class="span12">								
+								<form action="#" method="get">
+								<div class="span12">
 									 <div class="span4 control-group" id="test">
 									 	 <input type="text" name="" value="" class="" placeholder="" id="text1">
-									 	  
+
 									 	 <input type="text" name="" value="" placeholder="" id="text2">
 									 	 <span class="error_msg"></span>
 									 	<input type="text" id="date">
@@ -212,27 +211,34 @@
 										<button type="button" class="btn">Cancel</button>
 									</div>
 								 </div>
-								 
-								</form>
-								<?php 
-									 $new = "news bra bra";
-									// $test = highlight_string($new);
-								 
-									 $test6 = str_word_count($new, 2);
-									 //print_r($test6);
-								 
-								 	print_r(str_word_count("Hello world & good morning!",1));
-								 	echo '<br>';
-									print_r(str_word_count("Hello world & good morning!",1,"&"));
-									echo '<br>';
-								 
-									//  $data = "Two Ts and one F.";
 
-									// foreach (count_chars($data, 1) as $i => $val) {
-									//    echo "There were $val instance(s) of \"" , chr($i) , "\" in the string.\n <br >";
-									// }
-										 
-								?>
+								</form>
+									 <?php
+									$new = "news bra bra";
+									// $test = highlight_string($new);
+
+									$test6 = str_word_count($new, 2);
+									print_r($test6);
+
+									print_r(str_word_count("Hello world & good morning!", 1));
+									echo '<br>';
+									print_r(str_word_count("Hello world & good morning!", 1, "&"));
+
+									for ($i = 0; $i < 10; $i++) {
+										if ($i % 2 == 0) {
+											echo "Flipflop";
+										}
+									}
+									 
+									$a        = 10;
+									$otherVar = 20;
+									$mmmaa    = 222;
+									$data = "Two Ts and one F.";
+
+									foreach (count_chars($data, 1) as $i => $val) {
+										echo "There were $val instance(s) of \"", chr($i), "\" in the string.\n <br >";
+									}
+									?>
 							</div>
 						</div>
 					</div>
@@ -240,7 +246,7 @@
 			</div>
 		</div>
 	</div>
-		
+
 	</body>
 	</html>
 
