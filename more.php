@@ -216,7 +216,9 @@ include 'navication/navebar.php';
 									 <?php
 									$new = "news bra bra";
 									// $test = highlight_string($new);
-
+									$sql = "SELECT * FROM test";
+									$query = mysql_query($sql) or die ("Error".mysql_error());
+									
 									$test6 = str_word_count($new, 2);
 									print_r($test6);
 
@@ -233,6 +235,9 @@ include 'navication/navebar.php';
 									$a        = 10;
 									$otherVar = 20;
 									$mmmaa    = 222;
+									echo "datea";
+									echo $otherVar;
+
 									$data = "Two Ts and one F.";
 
 									foreach (count_chars($data, 1) as $i => $val) {
