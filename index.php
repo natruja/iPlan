@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>	
+<head>
 	<meta charset="UTF-8">
 	<title>PDO Test</title>
-	 <?php 
-	 	include 'header/header.php';
-	 ?>
+	 <?php
+include 'header/header.php';
+?>
 	 <script type="text/javascript">
 	 		$(document).ready(function(){
 	 				 var table = $('#example').DataTable( {
@@ -15,13 +15,13 @@
        					 "select": true
    					 });
    					$("#id-seletor").appendTo(".dataTables_length");
-     					 
+
    					// 		$('#test2').appendTo('div.dataTables_length');
 					var oTable = $('#example').dataTable();
 					$('#selector').change(function(){
 					     oTable.fnFilter($(this).val());
 					});
-					 
+
 	 			function save_detail(){
 	 				var detail = $('#detail').serialize();
 	 				$.ajax({
@@ -55,7 +55,7 @@
 			        	click: function() {
 			        		$(this).dialog("close");
 			        	}
-			        	 
+
 			        },{
 			        	text: 'บันทึกและส่งเมล์',
 			        	iconCls: 'icon-save',
@@ -68,32 +68,32 @@
 				        $(this).parent().find(".ui-dialog-buttonset")
 				            .addClass("orange");
 					 }
-			        
+
 			    });
 
 				$('#test').change(function(event) {
-		 			if($(this).val() == '2'){				 	 
+		 			if($(this).val() === '2'){
 	 				 $('#dialog-modal').dialog('open');
 	 				}
-	 			});	
-	
-	 			
-	 			 
-	 			
-	 			var test = $('#form_send').serialize();
+	 			});
+
+
+
+
+	 			var test2 = $('#form_send').serialize();
 	 			var message = "Do you want to close?";
 	 	 		$('#success').click(function(e) {
 	 			 	 bootbox.confirm(message,function(result){
 	 			 	 	alert(result);
 	 			 	 	 // if(data === true){
-	 			 	 	 // 	window.location.href = 'http://www.google.com'; 
+	 			 	 	 // 	window.location.href = 'http://www.google.com';
 	 			 	 	 // }
 	 			 	 });
-						 
-	 			 	 
-           			 
+
+
+
 	 			 }) ;
-	 			 	 
+
 	 		});
 	 </script>
 	 <style type="text/css" media="screen">
@@ -103,7 +103,7 @@
 		/*#refresh{
 			float: center;
 			margin-left: 50px;
-			border: 1px; 
+			border: 1px;
 		}*/
 		div.dataTables_length {
 		   /* padding-left: 2em;
@@ -118,16 +118,16 @@
 	    } */
 	    #id-seletor{
 	    	float: right;
-	    } 
+	    }
 
-		 
-		 
+
+
 	</style>
 </head>
 <body>
-	<?php 
-		include 'navication/navebar.php';
-	?>
+	<?php
+include 'navication/navebar.php';
+?>
 	 <div class="container-fluid" id="content">
 		<div id="main">
 			<div class="container-fluid">
@@ -171,13 +171,13 @@
 							<div class="box-title">
 								<h3>
 									<i class="icon-reorder"></i>
-									Basic Widgets
+									Basic Widget
 								</h3>
 							</div>
 							<div class="box-content">
 								<div class="control-group">
 									<div id="modal-results">
-										
+
 									</div>
 
 								 	<select name="name" id="test2" class='chosen-select'>
@@ -185,19 +185,19 @@
 								 		<option value="2">Name 2</option>
 								 	</select>
 								 	 <button class="btn btn-success" id="success">Success</button>
-								 	 <?php 
-								 	 	for($i=0; $i< 5; $i++){
-
-								 	 ?>
-								 	 <a href="#myModal" role="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal<?php echo $i ?> ">Launch demo modal <?php echo $i ?></a>
-								 	 <div id="myModal<?php echo $i ?>" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel<?php echo $i ?>" aria-hidden="true">
+								 	 <?php
+for ($i = 0; $i < 5; $i++) {
+ 
+	?>
+								 	 <a href="#myModal" role="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal<?php echo $i?> ">Launch demo modal <?php echo $i?></a>
+								 	 <div id="myModal<?php echo $i?>" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel<?php echo $i?>" aria-hidden="true">
 								 	 	<div class="modal-header">
 								 	 		<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
 								 	 		<h3 id="myModalLabel">Modal header</h3>
 								 	 	</div>
 								 	 	<div class="modal-body">
 								 	 		<div id="modal-results">
-												<?php echo $i; ?>
+												<?php echo $i;?>
 
 								 	 		</div>
 
@@ -208,9 +208,10 @@
 								 	 		<button class="btn btn-primary" id="save">Save changes</button>
 								 	 	</div>
 								 	 </div>
-								 		<?php 
-								 			}
+								 		 <?php 
+								 				}
 								 		 ?>
+ 
 								 </div>
 							</div>
 						</div>
@@ -237,7 +238,7 @@
 									Dynamic table
 								</h3>
 							</div>
-								 
+
 							<div id="id-seletor">
 								เดือน &nbsp; &nbsp;
 								<select name="sle" id="selector" class='chosen-select' style="width: 100px;">
@@ -246,7 +247,7 @@
 									<option value="Other browsers">Other browsers</option>
 									<option value="Presto">Presto</option>
 									<option value="Trident">Trident</option>
-								</select> 
+								</select>
 							</div>
 							<div class="box-content nopadding">
 								<table class="table dataTable dataTable-colvis" id="example" width="100%">
@@ -266,7 +267,7 @@
 							                <th>Office</th>
 							                <th>Age</th>
 							                <th>Start date</th>
-							                
+
 							            </tr>
 							        </tfoot>
 									<tbody>
@@ -409,12 +410,12 @@
 					</div>
 				</div>
 
-		 
 
- 
+
+
 			</div>
 		</div>
 	</div>
-		
+
 </body>
 </html>
