@@ -114,7 +114,7 @@
 						</li>
 					</ul>
 				</li>
-				<li class='active'>
+				<li>
 					<a href="#" data-toggle="dropdown" class='dropdown-toggle'>
 						<i class="icon-th"></i>
 						<span>Pages</span>
@@ -136,7 +136,7 @@
 						<li>
 							<a href="more-login.html">Login</a>
 						</li>
-						<li class='active'>
+						<li>
 							<a href="more-blank.html">Blank page</a>
 						</li>
 					</ul>

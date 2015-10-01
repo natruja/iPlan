@@ -1,19 +1,41 @@
 <!DOCTYPE html>
 <html>
 <head>
- 	<?php 
-	 	include 'header/header.php';
-	 ?>
+ 	<?php
+include 'header/header.php';
+?>
+	 <script>
+       $(document).ready(function(e) {
+       		$("#home a:contains('Forms')").parent().addClass('active');
+        	$("#home a:contains('Home')").parent().addClass('active');
+
+        	$('#submit').on('click', function () {
+        		        		 	 
+        		 	 
+        		 		bootbox.prompt("เพิ่ม Email", function(result) {    
+               			  if (result) {
+                			  $('#result').html("Hi <b>"+result+"</b>"); // if result, "set" the document location       
+                 		 }
+           			 });
+ 			});
+        	var select = $('#select').val();
+        	$('#new').on('click', function() {
+        		 if($('#select').val() === "0" || $('#select').val() === ""){
+        		 	 bootbox.alert('คุณไม่ได้เลือกเขตหรือตำบล');
+        		 }
+        	});
+       });
+	 </script>
 	<style type="text/css" media="screen">
 		#main{
 			margin-left: 10px;
 		}
 	</style>
 </head>
-<body>
-	<?php 
-		include 'navication/navebar.php';
-	?>
+<body id="home">
+	<?php
+include 'navication/navebar.php';
+?>
 	<div class="container-fluid" id="content">
 		<div id="main">
 			<div class="container-fluid">
@@ -51,7 +73,7 @@
 				<div class="breadcrumbs">
 					<ul>
 						<li>
-							<a href="more-login.html">Home</a>
+							<a href="more-login.html" class="active open">Home</a>
 							<i class="icon-angle-right"></i>
 						</li>
 						<li>
@@ -79,6 +101,7 @@
 						</div>
 						<div class="span3">
 							<select name="select" id="select" class="chosen-select">
+								<option value="0">Option</option>
 								<option value="1">Option-1</option>
 								<option value="2">Option-2</option>
 								<option value="3">Option-3</option>
@@ -90,12 +113,31 @@
 								<option value="9">Option-9</option>
 							</select>
 						</div>
+						<button type="submit" class="btn btn-warning" id="new" >Click</button>
 						
 					</div>
 				</div>
+					<?php
+					function get_data($a, $b) {
+									$data = array();
 
+									for ($i = 0; $i <= $b; $i++) {
+										$data[$i] =($a+$b)*$i."<br/>";
+									}
+									return $data;
+					}
 
-
+					$num_day = array();
+					$num_day = get_data(20, 30);
+					for ($k = 0; $k <= count($num_day); $k++) {
+							//echo "" . $num_day[$k] . "<br/>";
+					}
+					  // echo "<script type='text/javascript'>
+						 // 	 bootbox.alert('บันทึกข้อมูลเรียบร้อยแล้ว');
+						 // </script>";
+					echo '<a  class="btn btn-success" id="submit">Delete user</a>';
+					?>
+					<a herf='www.google.co.th' id="result">Click</a>
 			</div>	
 		</div>
 	</div>

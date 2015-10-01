@@ -77,7 +77,19 @@ include 'header/header.php';
 	 				}
 	 			});
 
-
+				var success = $('#success').val();
+				var test3 = $('#test2').val();
+				$('#test2').change(function() {
+				 	if($('#test2').val() == "2"){
+				 		$('#success').val('2');
+				 	}else{
+				 		$('#success').val('1');
+				 	}
+				
+				 });
+					 
+				 	 		
+				  
 
 
 	 			var test2 = $('#form_send').serialize();
@@ -184,7 +196,7 @@ include 'navication/navebar.php';
 								 		<option value="1">Name 1</option>
 								 		<option value="2">Name 2</option>
 								 	</select>
-								 	 <button class="btn btn-success" id="success">Success</button>
+								 	 <button class="submit" id="success" value="0">Success</button>
 								 	 <?php
 for ($i = 0; $i < 5; $i++) {
  
