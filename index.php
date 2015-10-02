@@ -360,7 +360,7 @@ for ($i = 0; $i < 5; $i++) {
 											<td class='hidden-480'>X</td>
 										</tr>
 										<tr>
-											<td>Presto</td>
+											<td>Prestos</td>
 											<td>Nokia N800</td>
 											<td class='hidden-350'>N800</td>
 											<td class='hidden-1024'>-</td>
