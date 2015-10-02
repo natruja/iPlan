@@ -1,20 +1,19 @@
-<?php
-
- 
+  <?php
+require 'mail/class.phpmailer.php';
 require 'mail/PHPMailerAutoload.php';
 
 $mail = new PHPMailer();
 
 $mail->SMTPDebug = 4;                               // Enable verbose debug output
  
-$mail->isSMTP();                                     // Set mailer to use SMTP
+$mail->isSMTP();    
+                                 		// Set mailer to use SMTP
 $mail->Host = "tls://smtp.gmail.com:587";  // Specify main and backup SMTP servers
 $mail->SMTPAuth = true;                               // Enable SMTP authentication
 $mail->Username = 'rx.portal@gmail.com';                 // SMTP username
 $mail->Password = '21482149';                           // SMTP password
 $mail->Port = 587;                                    // TCP port to connect to
 $mail->SMTPSecure = 'tls';                            // Enable TLS encryption, `ssl` also accepted
-
 $mail->setFrom('rx.portal@gmail.com', 'rxportal');
 $mail->addAddress('natruja.k@jasmine.com', 'Natruja');     // Add a recipient
 //$mail->addAddress('ellen@example.com');               // Name is optional
@@ -35,5 +34,5 @@ if(!$mail->send()) {
     echo 'Mailer Error: ' . $mail->ErrorInfo;
 } else {
     echo 'Message has been sent';
-}
-?>
+}  
+ ?>  
