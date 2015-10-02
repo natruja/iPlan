@@ -4,8 +4,8 @@
 	<meta charset="UTF-8">
 	<title>PDO Test</title>
 	 <?php
-include 'header/header.php';
-?>
+			include 'header/header.php';
+		?>
 	 <script type="text/javascript">
 	 		$(document).ready(function(){
 	 				 var table = $('#example').DataTable( {
