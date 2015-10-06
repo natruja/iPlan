@@ -3,115 +3,115 @@
 <head>
 	<meta charset="UTF-8">
 	<title>PDO Test</title>
-	 <?php
-			include 'header/header.php';
-		?>
-	 <script type="text/javascript">
-	 		$(document).ready(function(){
-	 				 var table = $('#example').DataTable( {
-	 				 	"bPaginate": false,
-       					"bRetrieve": true,
-       					 "sdom": '<"top"i>rt<"bottom"fl><"clear">',
-       					 "select": true
-   					 });
-   					$("#id-seletor").appendTo(".dataTables_length");
+	<?php
+	include 'header/header.php';
+	?>
+	<script type="text/javascript">
+		$(document).ready(function(){
+			var table = $('#example').DataTable( {
+				"bPaginate": false,
+				"bRetrieve": true,
+				"sdom": '<"top"i>rt<"bottom"fl><"clear">',
+				"select": true
+			});
+			$("#id-seletor").appendTo(".dataTables_length");
 
    					// 		$('#test2').appendTo('div.dataTables_length');
-					var oTable = $('#example').dataTable();
-					$('#selector').change(function(){
-					     oTable.fnFilter($(this).val());
-					});
+   					var oTable = $('#example').dataTable();
+   					$('#selector').change(function(){
+   						oTable.fnFilter($(this).val());
+   					});
 
-	 			function save_detail(){
-	 				var detail = $('#detail').serialize();
-	 				$.ajax({
-	 					url: 'process.php',
-	 					data: detail,
-	 					type: 'POST',
-	 					success: function(data) {
-	 						alert(data);
-	 					}
-	 				});
-	 			}
+   					function save_detail(){
+   						var detail = $('#detail').serialize();
+   						$.ajax({
+   							url: 'process.php',
+   							data: detail,
+   							type: 'POST',
+   							success: function(data) {
+   								alert(data);
+   							}
+   						});
+   					}
 
-	 			var test = $('#test').val();
-	 			 $('#dialog-modal').dialog({
-			        modal: true,
-			        autoOpen: false,
-			        height: 300,
-			        width: 400,
-					show: {
-					        effect: "blind",
-					        duration: 1000
-					      },
-					hide: {
-					        effect: "explode",
-					        duration: 1000
-				     	 },
-			        title: 'รายละเอียดการขอหนังสือนุมัติ',
-			        buttons: [{
-			        	text: 'ปิด',
-			        	iconCls: 'icon-cancel',
-			        	click: function() {
-			        		$(this).dialog("close");
-			        	}
+   					var test = $('#test').val();
+   					$('#dialog-modal').dialog({
+   						modal: true,
+   						autoOpen: false,
+   						height: 300,
+   						width: 400,
+   						show: {
+   							effect: "blind",
+   							duration: 1000
+   						},
+   						hide: {
+   							effect: "explode",
+   							duration: 1000
+   						},
+   						title: 'รายละเอียดการขอหนังสือนุมัติ',
+   						buttons: [{
+   							text: 'ปิด',
+   							iconCls: 'icon-cancel',
+   							click: function() {
+   								$(this).dialog("close");
+   							}
 
-			        },{
-			        	text: 'บันทึกและส่งเมล์',
-			        	iconCls: 'icon-save',
-			        	click: function(){
-			        		save_detail();
-			        		$(this).dialog("close");
-			        	}
-			        }],
-			        open: function (e, ui) {
-				        $(this).parent().find(".ui-dialog-buttonset")
-				            .addClass("orange");
-					 }
+   						},{
+   							text: 'บันทึกและส่งเมล์',
+   							iconCls: 'icon-save',
+   							click: function(){
+   								save_detail();
+   								$(this).dialog("close");
+   							}
+   						}],
+   						open: function (e, ui) {
+   							$(this).parent().find(".ui-dialog-buttonset")
+   							.addClass("orange");
+   						}
 
-			    });
+   					});
 
-				$('#test').change(function(event) {
-		 			if($(this).val() === '2'){
-	 				 $('#dialog-modal').dialog('open');
-	 				}
-	 			});
+   					$('#test').change(function(event) {
+   						if($(this).val() === '2'){
+   							$('#dialog-modal').dialog('open');
+   						}
+   					});
 
-				var success = $('#success').val();
-				var test3 = $('#test2').val();
-				$('#test2').change(function() {
-				 	if($('#test2').val() == "2"){
-				 		$('#success').val('2');
-				 	}else{
-				 		$('#success').val('1');
-				 	}
-				
-				 });
-					 
-				 	 		
-				  
+   					var success = $('#success').val();
+   					var test3 = $('#test2').val();
+   					$('#test2').change(function() {
+   						if($('#test2').val() == "2"){
+   							$('#success').val('2');
+   						}else{
+   							$('#success').val('1');
+   						}
+   						
+   					});
+   					
+   					
+   					
 
 
-	 			var test2 = $('#form_send').serialize();
-	 			var message = "Do you want to close?";
-	 	 		$('#success').click(function(e) {
-	 			 	 bootbox.confirm(message,function(result){
-	 			 	 	alert(result);
+   					var test2 = $('#form_send').serialize();
+   					var message = "Do you want to close?";
+   					$('#success').click(function(e) {
+   						bootbox.confirm(message,function(result){
+   							alert(result);
 	 			 	 	 // if(data === true){
 	 			 	 	 // 	window.location.href = 'http://www.google.com';
 	 			 	 	 // }
-	 			 	 });
+	 			 	 	});
 
 
 
-	 			 }) ;
+   					}) ;
 
-	 		});
-	 </script>
-	 <style type="text/css" media="screen">
-		#main{
-			margin-left: 5px;
-		}
+   				});
+</script>
+<style type="text/css" media="screen">
+	#main{
+		margin-left: 5px;
+	}
 		/*#refresh{
 			float: center;
 			margin-left: 50px;
@@ -120,33 +120,33 @@
 		div.dataTables_length {
 		   /* padding-left: 2em;
 		    border-style: solid;
-    		border-width: medium;*/
-    		width: 50%;
+		    border-width: medium;*/
+		    width: 50%;
 		}
 	   /* div.dataTables_filter {
 	        padding-top: 0.55em;
 	        border-style: solid;
     		border-width: medium;
-	    } */
-	    #id-seletor{
-	    	float: right;
-	    }
+    	} */
+    	#id-seletor{
+    		float: right;
+    	}
 
 
 
-	</style>
+    </style>
 </head>
 <body>
 	<?php
-include 'navication/navebar.php';
-?>
-	 <div class="container-fluid" id="content">
+	include 'navication/navebar.php';
+	?>
+	<div class="container-fluid" id="content">
 		<div id="main">
 			<div class="container-fluid">
 				<div class="page-header">
 					<div class="pull-left">
 						<h1>Blank pages</h1>
-						 <div class="ui black horizontal label">Fruit</div>
+						<div class="ui black horizontal label">Fruit</div>
 					</div>
 					<div class="pull-right">
 						<ul class="minitiles">
@@ -192,43 +192,42 @@ include 'navication/navebar.php';
 
 									</div>
 
-								 	<select name="name" id="test2" class='chosen-select'>
-								 		<option value="1">Name 1</option>
-								 		<option value="2">Name 2</option>
-								 	</select>
-								 	 <button class="submit" id="success" value="0">Success</button>
-								 	 <?php
-for ($i = 0; $i < 5; $i++) {
- 
-	?>
-								 	 <a href="#myModal" role="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal<?php echo $i?> ">Launch demo modal <?php echo $i?></a>
-								 	 <div id="myModal<?php echo $i?>" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel<?php echo $i?>" aria-hidden="true">
-								 	 	<div class="modal-header">
-								 	 		<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-								 	 		<h3 id="myModalLabel">Modal header</h3>
-								 	 	</div>
-								 	 	<div class="modal-body">
-								 	 		<div id="modal-results">
-												<?php echo $i;?>
+									<select name="name" id="test2" class='chosen-select'>
+										<option value="1">Name 1</option>
+										<option value="2">Name 2</option>
+									</select>
+									<button class="submit" id="success" value="0">Success</button>
+									<?php
+									for ($i = 0; $i < 5; $i++) {
+										
+										?>
+										<a href="#myModal" role="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal<?php echo $i?> ">Launch demo modal <?php echo $i?></a>
+										<div id="myModal<?php echo $i?>" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel<?php echo $i?>" aria-hidden="true">
+											<div class="modal-header">
+												<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+												<h3 id="myModalLabel">Modal header</h3>
+											</div>
+											<div class="modal-body">
+												<div id="modal-results">
+													<?php echo $i;?>
 
-								 	 		</div>
+												</div>
 
 
-								 	 	</div>
-								 	 	<div class="modal-footer">
-								 	 		<button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
-								 	 		<button class="btn btn-primary" id="save">Save changes</button>
-								 	 	</div>
-								 	 </div>
-								 		 <?php 
-								 				}
-								 		 ?>
- 
-								 </div>
+											</div>
+											<div class="modal-footer">
+												<button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
+												<button class="btn btn-primary" id="save">Save changes</button>
+											</div>
+										</div>
+										<?php 
+									}
+									?>
+									
+								</div>
 							</div>
 						</div>
 					</div>
-
 
 				</div><!-- row-fluid -->
 				<div id="dialog-modal" title="รายละเอียดการขอหนังสือนุมัติ">
@@ -236,12 +235,12 @@ for ($i = 0; $i < 5; $i++) {
 					<form id="form_send" method="POST">
 						<fieldset>
 							<label for="name">ระบุรายละเอียด</label>
-						 	<textarea name="detail" id="detail" style="margin: 0px 0px 10px; width: 345px; height: 138px;"></textarea>
+							<textarea name="detail" id="detail" style="margin: 0px 0px 10px; width: 345px; height: 138px;"></textarea>
 						</fieldset>
 					</form>
 				</div>
 
-			 	<div class="row-fluid">
+				<div class="row-fluid">
 					<div class="span12">
 						<div class="box box-color box-bordered">
 							<div class="box-title">
@@ -272,22 +271,22 @@ for ($i = 0; $i < 5; $i++) {
 											<th class='hidden-480'>CSS grade</th>
 										</tr>
 									</thead>
-									 <tfoot>
-							            <tr>
-							                <th>Name</th>
-							                <th>Position</th>
-							                <th>Office</th>
-							                <th>Age</th>
-							                <th>Start date</th>
+									<tfoot>
+										<tr>
+											<th>Name</th>
+											<th>Position</th>
+											<th>Office</th>
+											<th>Age</th>
+											<th>Start date</th>
 
-							            </tr>
-							        </tfoot>
+										</tr>
+									</tfoot>
 									<tbody>
 										<tr>
 											<td>Trident</td>
 											<td>
 												Internet
-													Explorer 4.0
+												Explorer 4.0
 											</td>
 											<td class='hidden-350'>Win 95+</td>
 											<td class='hidden-1024'>4</td>
@@ -353,7 +352,7 @@ for ($i = 0; $i < 5; $i++) {
 											<td>Trident</td>
 											<td>
 												Internet
-													Explorer 4.0
+												Explorer 4.0
 											</td>
 											<td class='hidden-350'>Win 95+</td>
 											<td class='hidden-1024'>4</td>
@@ -421,13 +420,8 @@ for ($i = 0; $i < 5; $i++) {
 						</div>
 					</div>
 				</div>
-
-
-
-
 			</div>
 		</div>
 	</div>
-
 </body>
 </html>
