@@ -1,5 +1,5 @@
   <?php
-
+//Meslo LG M DZ
   	ob_start();
 
 		require 'mail/class.phpmailer.php';
@@ -14,9 +14,9 @@
 		$mail->Host      	= "tls://smtp.gmail.com:587";  // Specify main and backup SMTP servers
 		$mail->SMTPAuth  	= true;                               // Enable SMTP authentication
 		$mail->Username  	= 'rx.portal@gmail.com';                 // SMTP username
-		$mail->Password = '21482149';                           // SMTP password
-		$mail->Port = 587;                                    // TCP port to connect to
-		$mail->SMTPSecure = 'tls';                            // Enable TLS encryption, `ssl` also accepted
+		$mail->Password 	= '21482149';                           // SMTP password
+		$mail->Port      	= 587;                                    // TCP port to connect to
+		$mail->SMTPSecure	= 'tls';                            // Enable TLS encryption, `ssl` also accepted
 		$mail->setFrom('rx.portal@gmail.com', 'rxportal');
 		$mail->addAddress('ple_lek69@hotmail.com', 'Natruja');     // Add a recipient
 		 

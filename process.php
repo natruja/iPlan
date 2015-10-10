@@ -15,5 +15,15 @@
 	 <p><?php echo "ระบบ New Node" ?></p>
 	<button type="button" class="btn btn-default">button</button>
 	<button type="button" class="btn btn-danger">button</button>
+	<?php
+		$x 	= 	array( 1, 2, 3);
+		$y 	= 	array( 3,4,5,6);
+		$z 	= 	array_merge($x,$y);
+		$u 	= 	array_unique($z);
+		$d 	= 	array_diff($y, $x);
+			echo '<pre>';
+			print_r( array( 'x'=>$x, 'y'=>$y,  'merge'=>$z,  'unique'=>$u,  'diff_Y-x'=>$d ));
+			echo '</pre>';
+		?>
  </body>
 </html>
