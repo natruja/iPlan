@@ -1,4 +1,7 @@
-<!DOCTYPE html>
+ <?php 
+ 
+ ?>
+ <!DOCTYPE html>
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
@@ -198,8 +201,13 @@
 									</select>
 									<button class="submit" id="success" value="0">Success</button>
 									<?php
-									for ($i = 0; $i < 5; $i++) {
-										
+										echo "Last modified: " . date ("F d Y H:i:s.", getlastmod());
+										$incls = get_included_files(); 
+										$incls = array_filter($incls, "is_file"); 
+										echo 'Current script owner: ' . get_current_user();
+										//print_r($incls);
+										for ($i = 0; $i < 5; $i++) {
+									
 										?>
 										<a href="#myModal" role="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal<?php echo $i?> ">Launch demo modal <?php echo $i?></a>
 										<div id="myModal<?php echo $i?>" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel<?php echo $i?>" aria-hidden="true">
@@ -212,8 +220,6 @@
 													<?php echo $i;?>
 
 												</div>
-
-
 											</div>
 											<div class="modal-footer">
 												<button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
@@ -221,7 +227,7 @@
 											</div>
 										</div>
 										<?php 
-									}
+										}
 									?>
 									
 								</div>

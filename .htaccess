@@ -1,0 +1,6 @@
+<IfModule mod_rewrite.c>  
+RewriteEngine on  
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME}\.php -f
+RewriteRule ^(.*)$ process.php?id=$1&id2=$id2 [QSA,L]
+</IfModule>

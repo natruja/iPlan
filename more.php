@@ -1,4 +1,4 @@
-<!doctype html>
+ <!doctype html>
 <html>
 <head>
 	 <?php
@@ -163,53 +163,56 @@
 								</form>
 									 <?php
 									 
-$new = "news bra bra";
+										$new = "news bra bra";
+										// $test = highlight_string($new);
 
-// $test = highlight_string($new);
+										$mysqli = new mysqli("localhost", "root", "", "imp");
+										if (mysqli_connect_error()) {
+														echo "ErorConnect" . mysqli_connect_error();
+														exit();
+										}
 
-$mysqli = new mysqli("localhost", "root", "", "imp");
-if (mysqli_connect_error()) {
-				echo "ErorConnect" . mysqli_connect_error();
-				exit();
-}
+										// if ($result = $mysqli->query("SELECT imp()")) {
+										//     $row = $result->fetch_row();
+										//     printf("Default database is %s.\n", $row[0]);
+										//     $result->close();
+										// }
 
-// if ($result = $mysqli->query("SELECT imp()")) {
-//     $row = $result->fetch_row();
-//     printf("Default database is %s.\n", $row[0]);
-//     $result->close();
-// }
+										$mysqli->select_db("imp");
 
-$mysqli->select_db("imp");
+										$sql = "SELECT * FROM ia_status";
 
-$sql = "SELECT * FROM ia_status";
+										$query = mysqli_query($mysqli, $sql) or die("Error" . mysql_error());
+										$row = mysqli_num_fields($query);
+										while ($fe = mysqli_fetch_array($query)) {
+														echo $fe[1];
+														echo "<br >";
+										}
 
-$query = mysqli_query($mysqli, $sql) or die("Error" . mysql_error());
-$row = mysqli_num_fields($query);
-while ($fe = mysqli_fetch_array($query)) {
-				echo $fe[1];
-				echo "<br >";
-}
+										// print_r(str_word_count("Hello world & good morning!", 1));
+										// echo '<br>';
+										// print_r(str_word_count("Hello world & good morning!", 1, "&"));
 
-// print_r(str_word_count("Hello world & good morning!", 1));
-// echo '<br>';
-// print_r(str_word_count("Hello world & good morning!", 1, "&"));
+										for ($i = 0; $i < 10; $i++) {
+														if ($i % 2 == 0) {
+																		
+																		//echo "Flipflop"."<br >";
+																		
+														}
+										}
 
-for ($i = 0; $i < 10; $i++) {
-				if ($i % 2 == 0) {
-								
-								//echo "Flipflop"."<br >";
-								
-				}
-}
+										$data = "Two Ts and one F.";
 
-$data = "Two Ts and one F.";
-
-// foreach (count_chars($data, 1) as $i => $val) {
-// 	echo "There were $val instance(s) of \"", chr($i), "\" in the string.\n <br >";
-// }
+										// foreach (count_chars($data, 1) as $i => $val) {
+										// 	echo "There were $val instance(s) of \"", chr($i), "\" in the string.\n <br >";
+										// }
+										?>
 
 
-?>
+									<?php $id = "10" ?>
+									 <a href="process.php?id=<?=$id ?>" class="btn btn-primary">click</a>
+
+
 							</div>
 						</div>
 					</div>
